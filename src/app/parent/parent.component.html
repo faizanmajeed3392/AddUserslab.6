@@ -1,0 +1,8 @@
+<div>
+  <!-- Input field and button for adding users -->
+  <input type="text" #newUserInput placeholder="Enter user name">
+  <button (click)="addUser(newUserInput.value); newUserInput.value=''">Add User</button>
+</div>
+
+<!-- Passing the list of users to UserDetailComponent -->
+<app-child [users]="users" (removeUser)="removeUser($event)"></app-child>
